@@ -1,7 +1,9 @@
-package br.ethamorim.service.test;
+package br.ethamorim.cantina.ifal.domain;
 
 
 import br.ethamorim.cantina.ifal.domain.Funcionario_;
+import br.ethamorim.cantina.ifal.exceptions.EmptyParameterException;
+import br.ethamorim.cantina.ifal.exceptions.InvalidParameterException;
 import org.hibernate.tool.schema.Action;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -29,19 +31,32 @@ public class FuncionarioTests {
     }
 
     @Test
-    public void persisteFuncionario() {
+    public void persisteFuncionarios_depoisVerificaInsercao_depoisRemoveFuncionarios_finalmenteVerificaRemocao() {
         sessionFactory.inTransaction(session -> {
-            session.persist(new Funcionario(12312312321L, "Ethaniel", Cargo.GERENTE));
-            session.persist(new Funcionario(43243243256L, "Ytalo", Cargo.GERENTE));
-        });
+            try {
+                var funcionario1 = new Funcionario(12312312321L, "Ethaniel", Cargo.GERENTE);
+                session.persist(funcionario1);
 
-        sessionFactory.inSession(session -> {
-           List<Funcionario> funcionarios = session.createSelectionQuery("from Funcionario", Funcionario.class)
-                   .getResultList();
-           int quantidadeEsperada = 2;
-           Assert.assertEquals(quantidadeEsperada, funcionarios.size());
+                var funcionario2 = new Funcionario(43243243256L, "Ytalo", Cargo.GERENTE);
+                session.persist(funcionario2);
+                session.flush();
 
-           funcionarios.forEach(Assert::assertNotNull);
+                List<Funcionario> funcionarios = session.createSelectionQuery("from Funcionario", Funcionario.class)
+                        .getResultList();
+                int quantidadeEsperada = 2;
+                Assert.assertEquals(quantidadeEsperada, funcionarios.size());
+                funcionarios.forEach(Assert::assertNotNull);
+
+                session.remove(funcionario1);
+                session.flush();
+
+                List<Funcionario> funcionarioAposExclusao = session.createSelectionQuery("from Funcionario", Funcionario.class)
+                        .getResultList();
+                int quantidadeEsperadaAposExclusao = 1;
+                Assert.assertEquals(quantidadeEsperadaAposExclusao, funcionarioAposExclusao.size());
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         });
     }
 
@@ -52,7 +67,12 @@ public class FuncionarioTests {
         Cargo cargo = Cargo.GERENTE;
 
         sessionFactory.inTransaction(session -> {
-            session.persist(new Funcionario(cpf, nome, cargo));
+            try {
+                session.persist(new Funcionario(cpf, nome, cargo));
+                session.flush();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         });
 
         sessionFactory.inSession(session -> {
@@ -61,6 +81,32 @@ public class FuncionarioTests {
                     .load();
             Assert.assertEquals(nome, funcionario.getNome());
             Assert.assertEquals(cargo, funcionario.getCargo());
+        });
+
+        sessionFactory.inTransaction(session -> {
+            session.createMutationQuery("delete from Funcionario").executeUpdate();
+        });
+    }
+
+    @Test
+    public void lancaErroPorParametroNulo() {
+        sessionFactory.inTransaction(session -> {
+            Assert.assertThrows(InvalidParameterException.class, () -> {
+                session.persist(new Funcionario(12345678910L, null, Cargo.GERENTE));
+            });
+
+            Assert.assertThrows(InvalidParameterException.class, () -> {
+                session.persist(new Funcionario(1234123421L, "Ytalo Ethaniel", null));
+            });
+        });
+    }
+
+    @Test
+    public void lancaErroPorParametroVazio() {
+        sessionFactory.inTransaction(session -> {
+            Assert.assertThrows(EmptyParameterException.class, () -> {
+                session.persist(new Funcionario(12345678910L, "", Cargo.GERENTE));
+            });
         });
     }
 }
