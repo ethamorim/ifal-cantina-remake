@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26a6e49e-41cf-4b40-b808-0c3456003023" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gui/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/main/java/module-info.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/br/ethamorim/service/domain/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/br/ethamorim/cantina/ifal/domain/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/service/test/FuncionarioTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/service/test/FuncionarioTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/test/java/module-info.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +30,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2ZzE95ElXzo43uuU5CNiyPpBiJ5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -46,6 +47,8 @@
     &quot;JUnit.FuncionarioTest (1).executor&quot;: &quot;Run&quot;,
     &quot;JUnit.FuncionarioTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.FuncionarioTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FuncionarioTests.persisteFuncionario.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FuncionarioTests.persisteFuncionarios.executor&quot;: &quot;Debug&quot;,
     &quot;Maven.ifal-cantina-remake [compile].executor&quot;: &quot;Run&quot;,
     &quot;Maven.ifal-cantina-remake [package].executor&quot;: &quot;Run&quot;,
     &quot;Maven.service [package].executor&quot;: &quot;Run&quot;,
@@ -96,9 +99,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FuncionarioTests.persisteFuncionario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.ethamorim.service.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.ethamorim.service.test" />
+      <option name="MAIN_CLASS_NAME" value="br.ethamorim.service.test.FuncionarioTests" />
+      <option name="METHOD_NAME" value="persisteFuncionario" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FuncionarioTests.persisteFuncionarios" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.ethamorim.service.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.ethamorim.service.test" />
+      <option name="MAIN_CLASS_NAME" value="br.ethamorim.service.test.FuncionarioTests" />
+      <option name="METHOD_NAME" value="persisteFuncionarios" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.FuncionarioTests" />
+        <item itemvalue="JUnit.FuncionarioTests.persisteFuncionario" />
+        <item itemvalue="JUnit.FuncionarioTests.persisteFuncionarios" />
         <item itemvalue="JUnit.FuncionarioTest" />
       </list>
     </recent_temporary>

@@ -1,4 +1,4 @@
-package br.ethamorim.service.domain;
+package br.ethamorim.cantina.ifal.domain;
 
 import br.ethamorim.cantina.ifal.cantina.Cargo;
 import jakarta.persistence.*;
@@ -28,5 +28,21 @@ public class Funcionario {
         this.cpf = cpf;
         this.nome = nome;
         this.cargo = cargo;
+    }
+
+    public long getCodigoFuncionario() {
+        return codigoFuncionario;
+    }
+
+    public long getCpf() {
+        return cpf;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Cargo getCargo() {
+        return cargo;
     }
 }
