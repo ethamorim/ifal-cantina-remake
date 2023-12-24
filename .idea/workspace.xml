@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="26a6e49e-41cf-4b40-b808-0c3456003023" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/br/ethamorim/service/domain/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/br/ethamorim/cantina/ifal/domain/Funcionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/service/test/FuncionarioTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/service/test/FuncionarioTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/service/test/FuncionarioTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/cantina/ifal/domain/FuncionarioTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="module-info" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -42,34 +37,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.FuncionarioTest (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FuncionarioTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FuncionarioTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FuncionarioTests.persisteFuncionario.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FuncionarioTests.persisteFuncionarios.executor&quot;: &quot;Debug&quot;,
-    &quot;Maven.ifal-cantina-remake [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.ifal-cantina-remake [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.service [package].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/deisantix/Programming/java-17-for-absolute-beginners&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.14746094&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.56213015&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.AcessoGerenteTests.executor": "Coverage",
+    "JUnit.AcessoVendedorTests.executor": "Run",
+    "JUnit.AcessoVendedorTests.lancaErroAoTentarPersistirUsuariosComNomeIguais.executor": "Run",
+    "JUnit.AcessoVendedorTests.lancaErroPorFaltaDeParametro.executor": "Run",
+    "JUnit.AcessoVendedorTests.lancaErroPorParametroInvalido.executor": "Run",
+    "JUnit.AcessoVendedorTests.lancaErroPorParametroNulo.executor": "Run",
+    "JUnit.AcessoVendedorTests.lancaErroPorParametroVazio.executor": "Run",
+    "JUnit.AcessoVendedorTests.persisteAcessoVendedor.executor": "Run",
+    "JUnit.AcessoVendedorTests.persisteAcessoVendedor_depoisVerificaInsercao_depoisRemoveAcesso_finalmenteVerificaRemocao.executor": "Run",
+    "JUnit.FuncionarioTest (1).executor": "Run",
+    "JUnit.FuncionarioTest.executor": "Run",
+    "JUnit.FuncionarioTests.executor": "Run",
+    "JUnit.FuncionarioTests.persisteFuncionario.executor": "Run",
+    "JUnit.FuncionarioTests.persisteFuncionarios.executor": "Debug",
+    "Maven.ifal-cantina-remake [compile].executor": "Run",
+    "Maven.ifal-cantina-remake [package].executor": "Run",
+    "Maven.service [package].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "21",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/deisantix/Programming/java-17-for-absolute-beginners",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.14746094",
+    "project.structure.side.proportion": "0.56213015",
+    "settings.editor.selected.configurable": "Errors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/service/src/test/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FuncionarioTests">
-    <configuration name="FuncionarioTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.AcessoVendedorTests">
+    <configuration name="AcessoVendedorTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
         <pattern>
@@ -78,54 +83,71 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.ethamorim.cantina.ifal.domain" />
-      <option name="MAIN_CLASS_NAME" value="br.ethamorim.cantina.ifal.domain.FuncionarioTest" />
+      <option name="MAIN_CLASS_NAME" value="br.ethamorim.cantina.ifal.domain.AcessoVendedorTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FuncionarioTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AcessoVendedorTests.lancaErroAoTentarPersistirUsuariosComNomeIguais" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.ethamorim.service.test.*" />
+          <option name="PATTERN" value="br.ethamorim.cantina.ifal.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="br.ethamorim.service.test" />
-      <option name="MAIN_CLASS_NAME" value="br.ethamorim.service.test.FuncionarioTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FuncionarioTests.persisteFuncionario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.ethamorim.service.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.ethamorim.service.test" />
-      <option name="MAIN_CLASS_NAME" value="br.ethamorim.service.test.FuncionarioTests" />
-      <option name="METHOD_NAME" value="persisteFuncionario" />
+      <option name="PACKAGE_NAME" value="br.ethamorim.cantina.ifal.domain" />
+      <option name="MAIN_CLASS_NAME" value="br.ethamorim.cantina.ifal.domain.AcessoVendedorTests" />
+      <option name="METHOD_NAME" value="lancaErroAoTentarPersistirUsuariosComNomeIguais" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FuncionarioTests.persisteFuncionarios" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AcessoVendedorTests.lancaErroPorParametroInvalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.ethamorim.service.test.*" />
+          <option name="PATTERN" value="br.ethamorim.cantina.ifal.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="br.ethamorim.service.test" />
-      <option name="MAIN_CLASS_NAME" value="br.ethamorim.service.test.FuncionarioTests" />
-      <option name="METHOD_NAME" value="persisteFuncionarios" />
+      <option name="PACKAGE_NAME" value="br.ethamorim.cantina.ifal.domain" />
+      <option name="MAIN_CLASS_NAME" value="br.ethamorim.cantina.ifal.domain.AcessoVendedorTests" />
+      <option name="METHOD_NAME" value="lancaErroPorParametroInvalido" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AcessoVendedorTests.lancaErroPorParametroNulo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.ethamorim.cantina.ifal.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.ethamorim.cantina.ifal.domain" />
+      <option name="MAIN_CLASS_NAME" value="br.ethamorim.cantina.ifal.domain.AcessoVendedorTests" />
+      <option name="METHOD_NAME" value="lancaErroPorParametroNulo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AcessoVendedorTests.lancaErroPorParametroVazio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.ethamorim.cantina.ifal.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.ethamorim.cantina.ifal.domain" />
+      <option name="MAIN_CLASS_NAME" value="br.ethamorim.cantina.ifal.domain.AcessoVendedorTests" />
+      <option name="METHOD_NAME" value="lancaErroPorParametroVazio" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -133,10 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FuncionarioTests" />
-        <item itemvalue="JUnit.FuncionarioTests.persisteFuncionario" />
-        <item itemvalue="JUnit.FuncionarioTests.persisteFuncionarios" />
-        <item itemvalue="JUnit.FuncionarioTest" />
+        <item itemvalue="JUnit.AcessoVendedorTests" />
+        <item itemvalue="JUnit.AcessoVendedorTests.lancaErroAoTentarPersistirUsuariosComNomeIguais" />
+        <item itemvalue="JUnit.AcessoVendedorTests.lancaErroPorParametroInvalido" />
+        <item itemvalue="JUnit.AcessoVendedorTests.lancaErroPorParametroNulo" />
+        <item itemvalue="JUnit.AcessoVendedorTests.lancaErroPorParametroVazio" />
       </list>
     </recent_temporary>
   </component>
@@ -157,5 +180,20 @@
       <updated>1703416353083</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.AssertionError" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ifal_cantina_remake$AcessoGerenteTests.ic" NAME="AcessoGerenteTests Coverage Results" MODIFIED="1703448912334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>br.ethamorim.cantina.ifal.domain.*</FILTER>
+    </SUITE>
   </component>
 </project>
