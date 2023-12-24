@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="26a6e49e-41cf-4b40-b808-0c3456003023" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/service/test/FuncionarioTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/cantina/ifal/domain/FuncionarioTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/br/ethamorim/cantina/ifal/domain/Acesso.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/br/ethamorim/cantina/ifal/domain/Acesso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/cantina/ifal/domain/AcessoVendedorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/cantina/ifal/domain/AcessoVendedorTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/cantina/ifal/domain/FuncionarioTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/cantina/ifal/domain/FuncionarioTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +41,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "JUnit.AcessoGerenteTests.executor": "Coverage",
+    "JUnit.AcessoGerenteTests.executor": "Run",
+    "JUnit.AcessoGerenteTests.persisteAcessoGerente_depoisVerificaInsercao_depoisRemoveAcesso_finalmenteVerificaRemocao.executor": "Run",
     "JUnit.AcessoVendedorTests.executor": "Run",
     "JUnit.AcessoVendedorTests.lancaErroAoTentarPersistirUsuariosComNomeIguais.executor": "Run",
     "JUnit.AcessoVendedorTests.lancaErroPorFaltaDeParametro.executor": "Run",
@@ -73,7 +76,38 @@
       <recent name="$PROJECT_DIR$/service/src/test/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AcessoVendedorTests">
+  <component name="RunManager" selected="JUnit.AcessoGerenteTests">
+    <configuration name="AcessoGerenteTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.ethamorim.cantina.ifal.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.ethamorim.cantina.ifal.domain" />
+      <option name="MAIN_CLASS_NAME" value="br.ethamorim.cantina.ifal.domain.AcessoGerenteTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AcessoGerenteTests.persisteAcessoGerente_depoisVerificaInsercao_depoisRemoveAcesso_finalmenteVerificaRemocao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.ethamorim.cantina.ifal.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.ethamorim.cantina.ifal.domain" />
+      <option name="MAIN_CLASS_NAME" value="br.ethamorim.cantina.ifal.domain.AcessoGerenteTests" />
+      <option name="METHOD_NAME" value="persisteAcessoGerente_depoisVerificaInsercao_depoisRemoveAcesso_finalmenteVerificaRemocao" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AcessoVendedorTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
@@ -121,45 +155,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AcessoVendedorTests.lancaErroPorParametroNulo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.ethamorim.cantina.ifal.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.ethamorim.cantina.ifal.domain" />
-      <option name="MAIN_CLASS_NAME" value="br.ethamorim.cantina.ifal.domain.AcessoVendedorTests" />
-      <option name="METHOD_NAME" value="lancaErroPorParametroNulo" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AcessoVendedorTests.lancaErroPorParametroVazio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.ethamorim.cantina.ifal.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.ethamorim.cantina.ifal.domain" />
-      <option name="MAIN_CLASS_NAME" value="br.ethamorim.cantina.ifal.domain.AcessoVendedorTests" />
-      <option name="METHOD_NAME" value="lancaErroPorParametroVazio" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AcessoGerenteTests" />
+        <item itemvalue="JUnit.AcessoGerenteTests.persisteAcessoGerente_depoisVerificaInsercao_depoisRemoveAcesso_finalmenteVerificaRemocao" />
         <item itemvalue="JUnit.AcessoVendedorTests" />
         <item itemvalue="JUnit.AcessoVendedorTests.lancaErroAoTentarPersistirUsuariosComNomeIguais" />
         <item itemvalue="JUnit.AcessoVendedorTests.lancaErroPorParametroInvalido" />
-        <item itemvalue="JUnit.AcessoVendedorTests.lancaErroPorParametroNulo" />
-        <item itemvalue="JUnit.AcessoVendedorTests.lancaErroPorParametroVazio" />
       </list>
     </recent_temporary>
   </component>

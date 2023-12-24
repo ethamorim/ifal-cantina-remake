@@ -3,7 +3,6 @@ package br.ethamorim.cantina.ifal.domain;
 import br.ethamorim.cantina.ifal.exceptions.EmptyParameterException;
 import br.ethamorim.cantina.ifal.exceptions.InvalidParameterException;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
 import org.hibernate.annotations.NaturalId;
 
 @Entity
