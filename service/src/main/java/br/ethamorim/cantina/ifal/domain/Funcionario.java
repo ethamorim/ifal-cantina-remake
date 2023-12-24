@@ -3,6 +3,7 @@ package br.ethamorim.service.domain;
 import br.ethamorim.cantina.ifal.cantina.Cargo;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import org.hibernate.annotations.NaturalId;
 
 @Entity
 public class Funcionario {
@@ -11,6 +12,7 @@ public class Funcionario {
     long codigoFuncionario;
 
     @NotNull
+    @NaturalId
     long cpf;
 
     @NotNull
