@@ -26,6 +26,7 @@ public class FuncionarioTests {
     public static void setUp() {
         sessionFactory = new Configuration()
                 .addAnnotatedClass(Funcionario.class)
+                .addAnnotatedClass(AcessoGerente.class)
                 .setProperty(AvailableSettings.JAKARTA_HBM2DDL_DATABASE_ACTION, Action.SPEC_ACTION_DROP_AND_CREATE)
                 .buildSessionFactory();
     }
@@ -54,6 +55,9 @@ public class FuncionarioTests {
                         .getResultList();
                 int quantidadeEsperadaAposExclusao = 1;
                 Assert.assertEquals(quantidadeEsperadaAposExclusao, funcionarioAposExclusao.size());
+
+                session.remove(funcionario2);
+                session.flush();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -85,6 +89,68 @@ public class FuncionarioTests {
 
         sessionFactory.inTransaction(session -> {
             session.createMutationQuery("delete from Funcionario").executeUpdate();
+        });
+    }
+
+    @Test
+    public void persisteFuncionarioComAcesso_finalmenteVerificaPersistenciaAcesso() {
+        sessionFactory.inTransaction(session -> {
+            try {
+                var funcionario = new Funcionario(12312312351L, "Ethaniel", Cargo.GERENTE);
+                session.persist(funcionario);
+
+                var acesso = new AcessoGerente("deisanti", "123456", funcionario);
+                session.persist(acesso);
+
+                funcionario.setAcesso(acesso);
+                session.flush();
+
+                Funcionario funcionarioAcessado = session.find(Funcionario.class, funcionario.getCodigoFuncionario());
+                Assert.assertNotNull(funcionarioAcessado);
+                Assert.assertEquals(funcionario, funcionarioAcessado);
+                Assert.assertNotNull(funcionarioAcessado.getAcesso());
+                Assert.assertEquals("deisanti", funcionarioAcessado.getAcesso().getNomeUsuario());
+            } catch (EmptyParameterException | InvalidParameterException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    @Test
+    public void persisteFuncionarios_finalmenteVerificaValoresDiferentes() {
+        sessionFactory.inTransaction(session -> {
+            try {
+                long cpf1 = 12312312345L;
+                var funcionario1 = new Funcionario(cpf1, "Ethaniel", Cargo.GERENTE);
+                session.persist(funcionario1);
+                var acesso1 = new AcessoGerente("ethaniel", "123123", funcionario1);
+                session.persist(acesso1);
+                funcionario1.setAcesso(acesso1);
+
+                long cpf2 = 12345678910L;
+                var funcionario2 = new Funcionario(cpf2, "Ytalo", Cargo.GERENTE);
+                session.persist(funcionario2);
+                var acesso2 = new AcessoGerente("ytalo", "123456", funcionario2);
+                session.persist(acesso2);
+                funcionario2.setAcesso(acesso2);
+                session.flush();
+
+                Funcionario acessado1 = session.byNaturalId(Funcionario.class)
+                        .using(Funcionario_.cpf, cpf1)
+                        .load();
+                Assert.assertNotNull(acessado1);
+                Assert.assertEquals("ethaniel", acessado1.getAcesso().getNomeUsuario());
+
+                Funcionario acessado2 = session.byNaturalId(Funcionario.class)
+                        .using(Funcionario_.cpf, cpf2)
+                        .load();
+                Assert.assertNotNull(acessado2);
+                Assert.assertEquals("ytalo", acessado2.getAcesso().getNomeUsuario());
+
+                session.createMutationQuery("delete from Funcionario").executeUpdate();
+            } catch (EmptyParameterException | InvalidParameterException e) {
+                e.printStackTrace();
+            }
         });
     }
 

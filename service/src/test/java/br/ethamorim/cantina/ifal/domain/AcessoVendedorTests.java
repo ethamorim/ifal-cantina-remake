@@ -21,6 +21,7 @@ public class AcessoVendedorTests {
     public static void init() {
         sessionFactory = new Configuration()
                 .addAnnotatedClass(AcessoVendedor.class)
+                .addAnnotatedClass(Funcionario.class)
                 .setProperty(AvailableSettings.JAKARTA_HBM2DDL_DATABASE_ACTION, Action.SPEC_ACTION_DROP_AND_CREATE)
                 .buildSessionFactory();
     }
@@ -30,7 +31,7 @@ public class AcessoVendedorTests {
         sessionFactory.inTransaction(session -> {
             int meta = 100;
             try {
-                var acesso = new AcessoVendedor("deisantix", "123456", meta, 0);
+                var acesso = new AcessoVendedor("deisantix", "123456", meta, 0, new Funcionario());
                 session.persist(acesso);
                 session.flush();
                 var acessoAdicionado = session.byNaturalId(AcessoVendedor.class)
@@ -55,8 +56,8 @@ public class AcessoVendedorTests {
     public void lancaErroAoTentarPersistirUsuariosComNomeIguais() {
         sessionFactory.inTransaction(session -> {
             try {
-                var acesso1 = new AcessoVendedor("deisantix", "123456", 50, 0);
-                var acesso2 = new AcessoVendedor("deisantix", "senha", 100, 0);
+                var acesso1 = new AcessoVendedor("deisantix", "123456", 50, 0, new Funcionario());
+                var acesso2 = new AcessoVendedor("deisantix", "senha", 100, 0, new Funcionario());
 
                 session.persist(acesso1);
                 session.persist(acesso2);
@@ -71,11 +72,11 @@ public class AcessoVendedorTests {
     public void lancaErroPorParametroNulo() {
         sessionFactory.inTransaction((session) -> {
             Assert.assertThrows(InvalidParameterException.class, () -> {
-                session.persist(new AcessoVendedor(null, "123456", 50, 0));
+                session.persist(new AcessoVendedor(null, "123456", 50, 0, new Funcionario()));
             });
 
             Assert.assertThrows(InvalidParameterException.class, () -> {
-               session.persist(new AcessoVendedor("deisantix", null, 50, 0));
+               session.persist(new AcessoVendedor("deisantix", null, 50, 0, new Funcionario()));
             });
         });
     }
@@ -84,11 +85,11 @@ public class AcessoVendedorTests {
     public void lancaErroPorParametroVazio() {
         sessionFactory.inTransaction(session -> {
             Assert.assertThrows(EmptyParameterException.class, () -> {
-                session.persist(new AcessoVendedor("", "123456", 50, 0));
+                session.persist(new AcessoVendedor("", "123456", 50, 0, new Funcionario()));
             });
 
             Assert.assertThrows(EmptyParameterException.class, () -> {
-                session.persist(new AcessoVendedor("deisantix", "", 50, 0));
+                session.persist(new AcessoVendedor("deisantix", "", 50, 0, new Funcionario()));
             });
         });
     }
@@ -97,7 +98,7 @@ public class AcessoVendedorTests {
     public void lancaErroPorParametroInvalido() {
         sessionFactory.inTransaction(session -> {
             Assert.assertThrows(InvalidParameterException.class, () -> {
-                session.persist(new AcessoVendedor("deisantix", "123456", 0, 0));
+                session.persist(new AcessoVendedor("deisantix", "123456", 0, 0, new Funcionario()));
             });
         });
     }
