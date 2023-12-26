@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="26a6e49e-41cf-4b40-b808-0c3456003023" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/br/ethamorim/cantina/ifal/domain/Acesso.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/br/ethamorim/cantina/ifal/domain/Acesso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/br/ethamorim/cantina/ifal/domain/AcessoGerente.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/br/ethamorim/cantina/ifal/domain/AcessoGerente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/br/ethamorim/cantina/ifal/domain/AcessoVendedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/br/ethamorim/cantina/ifal/domain/AcessoVendedor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/main/java/br/ethamorim/cantina/ifal/domain/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/br/ethamorim/cantina/ifal/domain/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/cantina/ifal/domain/AcessoGerenteTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/cantina/ifal/domain/AcessoGerenteTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/cantina/ifal/domain/AcessoVendedorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/cantina/ifal/domain/AcessoVendedorTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/cantina/ifal/domain/FuncionarioTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/cantina/ifal/domain/FuncionarioTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +46,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "JUnit.AcessoGerenteTests.executor": "Run",
+    "JUnit.AcessoGerenteTests.persisteAcessoGerente_depoisVerificaExistenciaDeFuncionario_depoisRemoveFuncionario_finalmenteVerificaEfeitoCascata.executor": "Run",
     "JUnit.AcessoGerenteTests.persisteAcessoGerente_depoisVerificaInsercao_depoisRemoveAcesso_finalmenteVerificaRemocao.executor": "Run",
+    "JUnit.AcessoGerenteTests.persisteAcessoGerente_finalmenteVerificaExistenciaDeFuncionario.executor": "Run",
+    "JUnit.AcessoGerenteTests.persiteAcessoGerenteComFuncionarioVazio_finalmenteVerificaFaltaDeIdFuncionario.executor": "Run",
+    "JUnit.AcessoGerenteTests.persiteAcessoGerente_masNaoEncontraFuncionario.executor": "Run",
     "JUnit.AcessoVendedorTests.executor": "Run",
     "JUnit.AcessoVendedorTests.lancaErroAoTentarPersistirUsuariosComNomeIguais.executor": "Run",
     "JUnit.AcessoVendedorTests.lancaErroPorFaltaDeParametro.executor": "Run",
@@ -50,16 +59,21 @@
     "JUnit.AcessoVendedorTests.lancaErroPorParametroVazio.executor": "Run",
     "JUnit.AcessoVendedorTests.persisteAcessoVendedor.executor": "Run",
     "JUnit.AcessoVendedorTests.persisteAcessoVendedor_depoisVerificaInsercao_depoisRemoveAcesso_finalmenteVerificaRemocao.executor": "Run",
+    "JUnit.DomainSuiteTests.executor": "Run",
     "JUnit.FuncionarioTest (1).executor": "Run",
     "JUnit.FuncionarioTest.executor": "Run",
     "JUnit.FuncionarioTests.executor": "Run",
     "JUnit.FuncionarioTests.lancaErroPorParametroNulo.executor": "Run",
+    "JUnit.FuncionarioTests.lancaErroPorParametroVazio.executor": "Run",
     "JUnit.FuncionarioTests.persisteFuncionario.executor": "Run",
+    "JUnit.FuncionarioTests.persisteFuncionarioComAcesso_finalmenteVerificaPersistenciaAcesso.executor": "Debug",
     "JUnit.FuncionarioTests.persisteFuncionarios.executor": "Debug",
     "JUnit.FuncionarioTests.persisteFuncionarios_depoisVerificaInsercao_depoisRemoveFuncionarios_finalmenteVerificaRemocao.executor": "Run",
+    "JUnit.FuncionarioTests.persisteFuncionarios_finalmenteVerificaValoresDiferentes.executor": "Run",
     "JUnit.FuncionarioTests.verificaInformacaoFuncionario.executor": "Run",
     "Maven.ifal-cantina-remake [compile].executor": "Run",
     "Maven.ifal-cantina-remake [package].executor": "Run",
+    "Maven.service [compile].executor": "Run",
     "Maven.service [package].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -78,8 +92,8 @@
       <recent name="$PROJECT_DIR$/service/src/test/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FuncionarioTests">
-    <configuration name="FuncionarioTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.FuncionarioTests.persisteFuncionarios_finalmenteVerificaValoresDiferentes">
+    <configuration name="AcessoGerenteTests.persisteAcessoGerente_depoisVerificaExistenciaDeFuncionario_depoisRemoveFuncionario_finalmenteVerificaEfeitoCascata" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
         <pattern>
@@ -88,29 +102,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.ethamorim.cantina.ifal.domain" />
-      <option name="MAIN_CLASS_NAME" value="br.ethamorim.cantina.ifal.domain.FuncionarioTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FuncionarioTests.lancaErroPorParametroNulo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.ethamorim.cantina.ifal.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.ethamorim.cantina.ifal.domain" />
-      <option name="MAIN_CLASS_NAME" value="br.ethamorim.cantina.ifal.domain.FuncionarioTests" />
-      <option name="METHOD_NAME" value="lancaErroPorParametroNulo" />
+      <option name="MAIN_CLASS_NAME" value="br.ethamorim.cantina.ifal.domain.AcessoGerenteTests" />
+      <option name="METHOD_NAME" value="persisteAcessoGerente_depoisVerificaExistenciaDeFuncionario_depoisRemoveFuncionario_finalmenteVerificaEfeitoCascata" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FuncionarioTests.lancaErroPorParametroVazio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AcessoGerenteTests.persisteAcessoGerente_finalmenteVerificaExistenciaDeFuncionario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
         <pattern>
@@ -119,14 +118,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.ethamorim.cantina.ifal.domain" />
-      <option name="MAIN_CLASS_NAME" value="br.ethamorim.cantina.ifal.domain.FuncionarioTests" />
-      <option name="METHOD_NAME" value="lancaErroPorParametroVazio" />
+      <option name="MAIN_CLASS_NAME" value="br.ethamorim.cantina.ifal.domain.AcessoGerenteTests" />
+      <option name="METHOD_NAME" value="persisteAcessoGerente_finalmenteVerificaExistenciaDeFuncionario" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FuncionarioTests.persisteFuncionarios_depoisVerificaInsercao_depoisRemoveFuncionarios_finalmenteVerificaRemocao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AcessoGerenteTests.persiteAcessoGerenteComFuncionarioVazio_finalmenteVerificaFaltaDeIdFuncionario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
         <pattern>
@@ -135,14 +134,30 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.ethamorim.cantina.ifal.domain" />
-      <option name="MAIN_CLASS_NAME" value="br.ethamorim.cantina.ifal.domain.FuncionarioTests" />
-      <option name="METHOD_NAME" value="persisteFuncionarios_depoisVerificaInsercao_depoisRemoveFuncionarios_finalmenteVerificaRemocao" />
+      <option name="MAIN_CLASS_NAME" value="br.ethamorim.cantina.ifal.domain.AcessoGerenteTests" />
+      <option name="METHOD_NAME" value="persiteAcessoGerenteComFuncionarioVazio_finalmenteVerificaFaltaDeIdFuncionario" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FuncionarioTests.verificaInformacaoFuncionario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AcessoGerenteTests.persiteAcessoGerente_masNaoEncontraFuncionario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.ethamorim.cantina.ifal.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.ethamorim.cantina.ifal.domain" />
+      <option name="MAIN_CLASS_NAME" value="br.ethamorim.cantina.ifal.domain.AcessoGerenteTests" />
+      <option name="METHOD_NAME" value="persiteAcessoGerente_masNaoEncontraFuncionario" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FuncionarioTests.persisteFuncionarios_finalmenteVerificaValoresDiferentes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
         <pattern>
@@ -152,7 +167,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="br.ethamorim.cantina.ifal.domain" />
       <option name="MAIN_CLASS_NAME" value="br.ethamorim.cantina.ifal.domain.FuncionarioTests" />
-      <option name="METHOD_NAME" value="verificaInformacaoFuncionario" />
+      <option name="METHOD_NAME" value="persisteFuncionarios_finalmenteVerificaValoresDiferentes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -160,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FuncionarioTests" />
-        <item itemvalue="JUnit.FuncionarioTests.lancaErroPorParametroVazio" />
-        <item itemvalue="JUnit.FuncionarioTests.lancaErroPorParametroNulo" />
-        <item itemvalue="JUnit.FuncionarioTests.verificaInformacaoFuncionario" />
-        <item itemvalue="JUnit.FuncionarioTests.persisteFuncionarios_depoisVerificaInsercao_depoisRemoveFuncionarios_finalmenteVerificaRemocao" />
+        <item itemvalue="JUnit.FuncionarioTests.persisteFuncionarios_finalmenteVerificaValoresDiferentes" />
+        <item itemvalue="JUnit.AcessoGerenteTests.persisteAcessoGerente_depoisVerificaExistenciaDeFuncionario_depoisRemoveFuncionario_finalmenteVerificaEfeitoCascata" />
+        <item itemvalue="JUnit.AcessoGerenteTests.persisteAcessoGerente_finalmenteVerificaExistenciaDeFuncionario" />
+        <item itemvalue="JUnit.AcessoGerenteTests.persiteAcessoGerenteComFuncionarioVazio_finalmenteVerificaFaltaDeIdFuncionario" />
+        <item itemvalue="JUnit.AcessoGerenteTests.persiteAcessoGerente_masNaoEncontraFuncionario" />
       </list>
     </recent_temporary>
   </component>
