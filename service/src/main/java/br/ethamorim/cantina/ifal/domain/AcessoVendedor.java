@@ -15,9 +15,9 @@ public class AcessoVendedor extends Acesso {
 
     public AcessoVendedor() {}
 
-    public AcessoVendedor(String nomeUsuario, String senha, int metaVendas, int quantidadeVendas)
+    public AcessoVendedor(String nomeUsuario, String senha, int metaVendas, int quantidadeVendas, Funcionario funcionario)
             throws InvalidParameterException, EmptyParameterException {
-        super(nomeUsuario, senha);
+        super(nomeUsuario, senha, funcionario);
 
         if (metaVendas <= 0) {
             throw new InvalidParameterException("Meta de vendas não pode ser menor que zero");

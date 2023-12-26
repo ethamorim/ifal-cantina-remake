@@ -18,18 +18,26 @@ public abstract class Acesso {
     @Basic(optional = false)
     String senha;
 
+    @OneToOne(optional = false, mappedBy = Funcionario_.ACESSO)
+    Funcionario funcionario;
+
     public Acesso() {}
 
-    public Acesso(String nomeUsuario, String senha)
+    public Acesso(String nomeUsuario, String senha, Funcionario funcionario)
             throws EmptyParameterException, InvalidParameterException {
+        String mensagemInvalido = "Parâmetros de Acesso não podem ser nulos";
         try {
             if (nomeUsuario.isEmpty() || senha.isEmpty()) {
                 throw new EmptyParameterException("Parâmetros de Acesso vazios");
             }
+            if (funcionario == null) {
+                throw new InvalidParameterException(mensagemInvalido);
+            }
             this.nomeUsuario = nomeUsuario;
             this.senha = senha;
+            this.funcionario = funcionario;
         } catch (NullPointerException e) {
-            throw new InvalidParameterException("Parâmetros de Acesso não pode ser nulos");
+            throw new InvalidParameterException(mensagemInvalido);
         }
     }
 
@@ -43,5 +51,9 @@ public abstract class Acesso {
 
     public String getSenha() {
         return senha;
+    }
+
+    public Funcionario getFuncionario() {
+        return funcionario;
     }
 }

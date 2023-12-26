@@ -8,7 +8,7 @@ import jakarta.persistence.Entity;
 public class AcessoGerente extends Acesso {
     public AcessoGerente() {}
 
-    public AcessoGerente(String nomeUsuario, String senha) throws InvalidParameterException, EmptyParameterException {
-        super(nomeUsuario, senha);
+    public AcessoGerente(String nomeUsuario, String senha, Funcionario funcionario) throws InvalidParameterException, EmptyParameterException {
+        super(nomeUsuario, senha, funcionario);
     }
 }

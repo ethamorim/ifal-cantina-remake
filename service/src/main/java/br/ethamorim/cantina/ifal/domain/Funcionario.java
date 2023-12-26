@@ -5,6 +5,7 @@ import br.ethamorim.cantina.ifal.exceptions.EmptyParameterException;
 import br.ethamorim.cantina.ifal.exceptions.InvalidParameterException;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.NaturalId;
 
 @Entity
@@ -23,6 +24,9 @@ public class Funcionario {
     @Enumerated(EnumType.STRING)
     @Basic(optional = false)
     Cargo cargo;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = {CascadeType.REMOVE}, orphanRemoval = true)
+    Acesso acesso;
 
     public Funcionario() {}
 
@@ -59,5 +63,13 @@ public class Funcionario {
 
     public Cargo getCargo() {
         return cargo;
+    }
+
+    public Acesso getAcesso() {
+        return acesso;
+    }
+
+    public void setAcesso(Acesso acesso) {
+        this.acesso = acesso;
     }
 }
