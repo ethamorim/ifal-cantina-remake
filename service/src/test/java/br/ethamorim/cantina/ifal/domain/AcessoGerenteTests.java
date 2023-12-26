@@ -78,7 +78,7 @@ public class AcessoGerenteTests {
         sessionFactory.inTransaction(session -> {
             try {
                 long cpf = 12312312321L;
-                var funcionario = new Funcionario(cpf, "Ethaniel", Cargo.GERENTE);
+                var funcionario = new Funcionario(cpf, "Ethaniel", "2003-11-10", Cargo.GERENTE, "2023-12-26");
                 var acesso = new AcessoGerente("deisantix", "123456", funcionario);
                 session.persist(funcionario);
                 funcionario.setAcesso(acesso);

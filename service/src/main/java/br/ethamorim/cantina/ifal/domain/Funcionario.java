@@ -8,6 +8,8 @@ import jakarta.validation.constraints.NotNull;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.NaturalId;
 
+import java.time.LocalDate;
+
 @Entity
 public class Funcionario {
 
@@ -21,16 +23,23 @@ public class Funcionario {
     @Basic(optional = false)
     String nome;
 
+    @Basic(optional = false)
+    LocalDate dataNascimento;
+
     @Enumerated(EnumType.STRING)
     @Basic(optional = false)
     Cargo cargo;
+
+    @Basic(optional = false)
+    LocalDate dataEntrada;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = {CascadeType.REMOVE}, orphanRemoval = true)
     Acesso acesso;
 
     public Funcionario() {}
 
-    public Funcionario(long cpf, String nome, Cargo cargo) throws EmptyParameterException, InvalidParameterException {
+    public Funcionario(long cpf, String nome, LocalDate dataNascimento, Cargo cargo, LocalDate dataEntrada)
+        throws EmptyParameterException, InvalidParameterException {
         this.cpf = cpf;
 
         String mensagemNulo = "Funcionário contém parâmetros nulos não permitidos";
@@ -38,7 +47,7 @@ public class Funcionario {
             if (nome.isEmpty()) {
                 throw new EmptyParameterException("Nome não pode ser vazio");
             }
-            if (cargo == null) {
+            if (cargo == null || dataNascimento == null || dataEntrada == null) {
                 throw new InvalidParameterException(mensagemNulo);
             }
         } catch (NullPointerException e) {
@@ -46,7 +55,14 @@ public class Funcionario {
         }
 
         this.nome = nome;
+        this.dataNascimento = dataNascimento;
         this.cargo = cargo;
+        this.dataEntrada = dataEntrada;
+    }
+
+    public Funcionario(long cpf, String nome, String isoDataNascimento, Cargo cargo, String isoDataEntrada)
+        throws EmptyParameterException, InvalidParameterException {
+        this(cpf, nome, LocalDate.parse(isoDataNascimento), cargo, LocalDate.parse(isoDataEntrada));
     }
 
     public long getCodigoFuncionario() {

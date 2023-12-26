@@ -16,6 +16,8 @@ import org.hibernate.cfg.AvailableSettings;
 import br.ethamorim.cantina.ifal.cantina.Cargo;
 import br.ethamorim.cantina.ifal.domain.Funcionario;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 
 
@@ -35,10 +37,10 @@ public class FuncionarioTests {
     public void persisteFuncionarios_depoisVerificaInsercao_depoisRemoveFuncionarios_finalmenteVerificaRemocao() {
         sessionFactory.inTransaction(session -> {
             try {
-                var funcionario1 = new Funcionario(12312312321L, "Ethaniel", Cargo.GERENTE);
+                var funcionario1 = new Funcionario(12312312321L, "Ethaniel", "2003-11-10", Cargo.GERENTE, "2023-12-26");
                 session.persist(funcionario1);
 
-                var funcionario2 = new Funcionario(43243243256L, "Ytalo", Cargo.GERENTE);
+                var funcionario2 = new Funcionario(43243243256L, "Ytalo", "2003-11-10", Cargo.GERENTE, "2023-12-26");
                 session.persist(funcionario2);
                 session.flush();
 
@@ -72,7 +74,7 @@ public class FuncionarioTests {
 
         sessionFactory.inTransaction(session -> {
             try {
-                session.persist(new Funcionario(cpf, nome, cargo));
+                session.persist(new Funcionario(cpf, nome, "2003-11-10", cargo,"2023-12-26"));
                 session.flush();
             } catch (Exception e) {
                 throw new RuntimeException(e);
@@ -96,7 +98,7 @@ public class FuncionarioTests {
     public void persisteFuncionarioComAcesso_finalmenteVerificaPersistenciaAcesso() {
         sessionFactory.inTransaction(session -> {
             try {
-                var funcionario = new Funcionario(12312312351L, "Ethaniel", Cargo.GERENTE);
+                var funcionario = new Funcionario(12312312351L, "Ethaniel", "2003-11-10", Cargo.GERENTE, "2023-12-26");
                 session.persist(funcionario);
 
                 var acesso = new AcessoGerente("deisanti", "123456", funcionario);
@@ -121,14 +123,14 @@ public class FuncionarioTests {
         sessionFactory.inTransaction(session -> {
             try {
                 long cpf1 = 12312312345L;
-                var funcionario1 = new Funcionario(cpf1, "Ethaniel", Cargo.GERENTE);
+                var funcionario1 = new Funcionario(cpf1, "Ethaniel", "2003-11-10", Cargo.GERENTE, "2023-12-26");
                 session.persist(funcionario1);
                 var acesso1 = new AcessoGerente("ethaniel", "123123", funcionario1);
                 session.persist(acesso1);
                 funcionario1.setAcesso(acesso1);
 
                 long cpf2 = 12345678910L;
-                var funcionario2 = new Funcionario(cpf2, "Ytalo", Cargo.GERENTE);
+                var funcionario2 = new Funcionario(cpf2, "Ytalo", "2003-11-10", Cargo.GERENTE, "2023-12-26");
                 session.persist(funcionario2);
                 var acesso2 = new AcessoGerente("ytalo", "123456", funcionario2);
                 session.persist(acesso2);
@@ -158,11 +160,19 @@ public class FuncionarioTests {
     public void lancaErroPorParametroNulo() {
         sessionFactory.inTransaction(session -> {
             Assert.assertThrows(InvalidParameterException.class, () -> {
-                session.persist(new Funcionario(12345678910L, null, Cargo.GERENTE));
+                session.persist(new Funcionario(12345678910L, null, "2003-11-10", Cargo.GERENTE, "2023-12-26"));
             });
 
             Assert.assertThrows(InvalidParameterException.class, () -> {
-                session.persist(new Funcionario(1234123421L, "Ytalo Ethaniel", null));
+                session.persist(new Funcionario(1234123421L, "Ytalo Ethaniel", "2003-11-10", null, "2023-12-26"));
+            });
+
+            Assert.assertThrows(InvalidParameterException.class, () -> {
+                session.persist(new Funcionario(1234123421L, "Ytalo Ethaniel", null, Cargo.GERENTE, LocalDate.of(2023, 12, 26)));
+            });
+
+            Assert.assertThrows(InvalidParameterException.class, () -> {
+                session.persist(new Funcionario(1234123421L, "Ytalo Ethaniel", LocalDate.of(2003, 11, 10), Cargo.GERENTE, null));
             });
         });
     }
@@ -171,7 +181,23 @@ public class FuncionarioTests {
     public void lancaErroPorParametroVazio() {
         sessionFactory.inTransaction(session -> {
             Assert.assertThrows(EmptyParameterException.class, () -> {
-                session.persist(new Funcionario(12345678910L, "", Cargo.GERENTE));
+                session.persist(new Funcionario(12345678910L, "", "2003-11-10", Cargo.GERENTE, "2023-12-26"));
+            });
+
+            Assert.assertThrows(NullPointerException.class, () -> {
+                session.persist(new Funcionario(1234123421L, "Ytalo Ethaniel", null, Cargo.GERENTE, "2023-12-26"));
+            });
+
+            Assert.assertThrows(DateTimeParseException.class, () -> {
+                session.persist(new Funcionario(1234123421L, "Ytalo Ethaniel", "", Cargo.GERENTE, "2023-12-26"));
+            });
+
+            Assert.assertThrows(NullPointerException.class, () -> {
+                session.persist(new Funcionario(1234123421L, "Ytalo Ethaniel", "2003-11-10", Cargo.GERENTE, null));
+            });
+
+            Assert.assertThrows(DateTimeParseException.class, () -> {
+                session.persist(new Funcionario(1234123421L, "Ytalo Ethaniel", "2003-11-10", Cargo.GERENTE, ""));
             });
         });
     }
