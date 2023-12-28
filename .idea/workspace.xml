@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="26a6e49e-41cf-4b40-b808-0c3456003023" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/br/ethamorim/cantina/ifal/domain/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/br/ethamorim/cantina/ifal/domain/Funcionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/cantina/ifal/domain/AcessoGerenteTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/cantina/ifal/domain/AcessoGerenteTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/cantina/ifal/domain/FuncionarioTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/br/ethamorim/cantina/ifal/domain/FuncionarioTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +52,7 @@
     "JUnit.AcessoVendedorTests.lancaErroPorParametroVazio.executor": "Run",
     "JUnit.AcessoVendedorTests.persisteAcessoVendedor.executor": "Run",
     "JUnit.AcessoVendedorTests.persisteAcessoVendedor_depoisVerificaInsercao_depoisRemoveAcesso_finalmenteVerificaRemocao.executor": "Run",
-    "JUnit.DomainSuiteTests.executor": "Run",
+    "JUnit.DomainSuiteTests.executor": "Coverage",
     "JUnit.FuncionarioTest (1).executor": "Run",
     "JUnit.FuncionarioTest.executor": "Run",
     "JUnit.FuncionarioTests.executor": "Run",
@@ -209,6 +206,9 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ifal_cantina_remake$AcessoGerenteTests.ic" NAME="AcessoGerenteTests Coverage Results" MODIFIED="1703448912334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>br.ethamorim.cantina.ifal.domain.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ifal_cantina_remake$DomainSuiteTests.ic" NAME="DomainSuiteTests Coverage Results" MODIFIED="1703605452364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>br.ethamorim.cantina.ifal.*</FILTER>
     </SUITE>
   </component>
 </project>
