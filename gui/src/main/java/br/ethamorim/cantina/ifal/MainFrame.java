@@ -9,16 +9,35 @@ import java.util.logging.Logger;
 
 public class MainFrame extends JFrame {
 
-    MainFrame() {
+    final JPanel opcoesPainel = new JPanel();
+    final SecoesPainel cards = new SecoesPainel();
+
+    private MainFrame() {
+        definirConfiguracoesPrincipais();
+        registrarComponentes();
+        renderizarFrame();
+    }
+
+    private void definirConfiguracoesPrincipais() {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cantina IFAL");
-        setMinimumSize(new Dimension(600, 400));
+        setMinimumSize(new Dimension(960, 600));
+    }
 
+    private void registrarComponentes() {
+        opcoesPainel.setPreferredSize(new Dimension(200, 0));
+        opcoesPainel.setBackground(new Color(92, 92, 92));
+
+        Container principalPainel = getContentPane();
+        principalPainel.add(opcoesPainel, BorderLayout.LINE_END);
+        principalPainel.add(cards, BorderLayout.CENTER);
+    }
+
+    private void renderizarFrame() {
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
     }
-
 
     public static void main(String[] args) {
         try {
