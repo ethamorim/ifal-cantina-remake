@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 public class MainFrame extends JFrame {
 
-    final JPanel opcoesPainel = new JPanel();
+    final OpcoesPainel opcoesPainel = new OpcoesPainel();
     final SecoesPainel cards = new SecoesPainel();
 
     private MainFrame() {
@@ -25,9 +25,6 @@ public class MainFrame extends JFrame {
     }
 
     private void registrarComponentes() {
-        opcoesPainel.setPreferredSize(new Dimension(200, 0));
-        opcoesPainel.setBackground(new Color(92, 92, 92));
-
         Container principalPainel = getContentPane();
         principalPainel.add(opcoesPainel, BorderLayout.LINE_END);
         principalPainel.add(cards, BorderLayout.CENTER);
@@ -40,12 +37,14 @@ public class MainFrame extends JFrame {
     }
 
     public static void main(String[] args) {
-        try {
-            FlatLightLaf.setup();
-            UIManager.setLookAndFeel(new FlatLightLaf());
-            new MainFrame();
-        } catch (UnsupportedLookAndFeelException e) {
-            Logger.getLogger(UnsupportedLookAndFeelException.class.getName()).log(Level.SEVERE, null, e);
-        }
+        EventQueue.invokeLater(() -> {
+            try {
+                FlatLightLaf.setup();
+                UIManager.setLookAndFeel(new FlatLightLaf());
+                new MainFrame();
+            } catch (UnsupportedLookAndFeelException e) {
+                Logger.getLogger(UnsupportedLookAndFeelException.class.getName()).log(Level.SEVERE, null, e);
+            }
+        });
     }
 }
